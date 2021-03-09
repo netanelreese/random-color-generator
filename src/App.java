@@ -10,26 +10,77 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.swing.*;
-
+/**
+ * Application code for the random color generator. Extends the JFrame class and implements the ActionListener class(?).
+ * 
+ * @author Nathanael Reese
+ * @version 1.0
+ *
+ */
 public class App extends JFrame implements ActionListener{
 	/**
-	 * 
+	 * Serial number for the application.
 	 */
 	private static final long serialVersionUID = 6432587278844995877L;
+	/**
+	 * String constant for the JButton member, generate.
+	 */
 	final String GENERATE_LABEL = "Generate";
+	/**
+	 * String constant for the JButton member, generateRandom.
+	 */
 	final String GENERATE_RANDOM_LABEL = "Generate Random";
+	/**
+	 * String constant for the JLabel member, InputRGB.
+	 */
 	final String INPUT_LABEL = "Input color (rgb):";
+	/**
+	 * Maximum value for an rgb variable.
+	 */
 	final int MAXIMUM_VAL = 255;
+	/**
+	 * Minimum value for an rgb variable.
+	 */
 	final int MINIMUM_VAL = 0;
+	/**
+	 * JLabel to prompt user to input an rgb value.
+	 */
 	JLabel InputRGB;
+	/**
+	 * Text field for user to input red value.
+	 */
 	JTextField red;
+	/**
+	 * Text field for user to input green value.
+	 */
 	JTextField green;
+	/**
+	 * Text field for user to input blue value.
+	 */
 	JTextField blue;
+	/**
+	 * Button to generate color of user's choice
+	 */
 	JButton generate;
+	/**
+	 * Button to generate random color.
+	 */
 	JButton generateRandom;
+	/**
+	 * Variable for red value of rgb.
+	 */
 	private int redVal;
+	/**
+	 * Variable for blue value of rgb.
+	 */
 	private int blueVal;
+	/**
+	 * Variable for green value of rgb.
+	 */
 	private int greenVal;
+	/**
+	 * Color value for user or random input.
+	 */
 	private Color color;
 	
 	public void launch() {
@@ -102,6 +153,7 @@ public class App extends JFrame implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//TODO: FIX RANDOM COLOR GENERATOR ON BUTTON PRESS
 		String redText = red.getText();
 		String greenText = green.getText();
 		String blueText = blue.getText();

@@ -105,9 +105,7 @@ public class App extends JFrame implements ActionListener{
 		String redText = red.getText();
 		String greenText = green.getText();
 		String blueText = blue.getText();
-		
-		System.out.println(redText + " " + greenText + " " + blueText);
-		
+				
 		if(redText != null || blueText != null || greenText != null) {
 			redVal = Integer.parseInt(red.getText()); //parsing input value
 			greenVal = Integer.parseInt(green.getText());

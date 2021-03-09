@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -32,20 +33,34 @@ public class App extends JFrame implements ActionListener{
 	private Color color;
 	
 	public void launch() {
+		setTitle("Random Color Generator");
+		
 		JLabel InputRGB = new JLabel(INPUT_LABEL);
-		JTextField red = new JTextField("0");
-		JTextField green = new JTextField("0");
-		JTextField blue = new JTextField("0");
+		red = new JTextField("0");
+		green = new JTextField("0");
+		blue = new JTextField("0");
 		JButton generate = new JButton(GENERATE_LABEL);
 		JButton generateRandom = new JButton(GENERATE_RANDOM_LABEL);
+		
+		Font labelFont = new Font("Comic Sans", Font.BOLD, 14);
+		
+		InputRGB.setFont(labelFont);
+		InputRGB.setForeground(Color.WHITE);
 		
 		setPreferredSize(new Dimension(400, 400));
 	    setLayout(new GridBagLayout());
 	    GridBagConstraints positionConst = new GridBagConstraints();
+		getContentPane().setBackground(new Color(128, 0, 32));
+
+	    
 		
 		red.setPreferredSize(new Dimension(40, 25));
 		green.setPreferredSize(new Dimension(40, 25));
 		blue.setPreferredSize(new Dimension(40, 25));
+		
+		
+		System.out.println(blueVal + redVal + greenVal);
+		
 		
 		generate.addActionListener(this);
 		generateRandom.addActionListener(this);
@@ -87,7 +102,13 @@ public class App extends JFrame implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(red.getText() != null || blue.getText() != null || green.getText() != null) {
+		String redText = red.getText();
+		String greenText = green.getText();
+		String blueText = blue.getText();
+		
+		System.out.println(redText + " " + greenText + " " + blueText);
+		
+		if(redText != null || blueText != null || greenText != null) {
 			redVal = Integer.parseInt(red.getText()); //parsing input value
 			greenVal = Integer.parseInt(green.getText());
 			blueVal = Integer.parseInt(blue.getText());
